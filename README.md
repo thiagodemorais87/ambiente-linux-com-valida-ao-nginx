@@ -223,3 +223,6 @@ Para testar se a solução está funcionando corretamente:
 Não compartilhe logs que possam conter informações sensíveis. Certifique-se de que o servidor Nginx está corretamente configurado e protegido com medidas adequadas de segurança.
 
 ---
+
+**Contato:**
+Caso Precise de Suporte, entre em contato pelo e-mail: thiagomgoncalves87@gmail.com
