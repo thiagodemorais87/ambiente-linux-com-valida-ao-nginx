@@ -14,3 +14,4 @@ Este projeto realiza o monitoramento do serviço Nginx em um ambiente Linux. O s
   - `offline.log`
   - `cron.log`
 # ambiente-linux-com-valida-ao-nginx
+# ambiente-linux-com-valida-ao-nginx
