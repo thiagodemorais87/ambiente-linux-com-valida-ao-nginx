@@ -16,3 +16,4 @@ Este projeto realiza o monitoramento do serviço Nginx em um ambiente Linux. O s
 # ambiente-linux-com-valida-ao-nginx
 # ambiente-linux-com-valida-ao-nginx
 # ambiente-linux-com-valida-ao-nginx
+# ambiente-linux-com-valida-ao-nginx
