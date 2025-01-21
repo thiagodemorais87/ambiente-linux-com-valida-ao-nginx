@@ -8,7 +8,7 @@ Este projeto tem como objetivo configurar um ambiente Linux no Windows utilizand
 
 ## Tecnologias e Ferramentas Utilizadas
 - **Windows Subsystem for Linux (WSL)**
-- **Ubuntu 20.04 ou superior**
+- **Ubuntu 20.04**
 - **Servidor Web Nginx**
 - **Bash Script**
 - **Crontab (para agendamento de execução automática)**
