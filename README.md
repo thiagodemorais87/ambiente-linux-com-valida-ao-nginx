@@ -81,22 +81,22 @@ Antes de começar, certifique-se de que possui os seguintes requisitos:
 
    ```bash
    #!/bin/bash
+   LOG_DIR=~/nginx-monitor-logs
+   ONLINE_LOG=$LOG_DIR/online.log
+   OFFLINE_LOG=$LOG_DIR/offline.log
 
-LOG_DIR=~/nginx-monitor-logs
-ONLINE_LOG=$LOG_DIR/online.log
-OFFLINE_LOG=$LOG_DIR/offline.log
+   echo "$(date) - Script started" >> $LOG_DIR/cron.log
 
-echo "$(date) - Script started" >> $LOG_DIR/cron.log
-
-if /bin/systemctl is-active nginx > /dev/null; then
+   if /bin/systemctl is-active nginx > /dev/null; then
     echo "$(date) - Nginx is online" >> $ONLINE_LOG
     echo "$(date) - Online log updated" >> $LOG_DIR/cron.log
-else
+   else
     echo "$(date) - Nginx is offline" >> $OFFLINE_LOG
     echo "$(date) - Offline log updated" >> $LOG_DIR/cron.log
-fi
+    fi
 
-echo "$(date) - Script finished" >> $LOG_DIR/cron.log
+   echo "$(date) - Script finished" >> $LOG_DIR/cron.log
+
    ```
 
    **Explicação:**
