@@ -81,27 +81,22 @@ Antes de começar, certifique-se de que possui os seguintes requisitos:
 
    ```bash
    #!/bin/bash
-   
-   SERVICE="nginx"
-   DATE=$(date '+%Y-%m-%d %H:%M:%S')
-   LOG_DIR="/home/usuario/logs"
-   
-   # Verifica o status do serviço
-   if systemctl is-active --quiet $SERVICE; then
-       STATUS="ONLINE"
-       MESSAGE="O serviço está ONLINE."
-       FILE="$LOG_DIR/online.log"
-   else
-       STATUS="OFFLINE"
-       MESSAGE="O serviço está OFFLINE."
-       FILE="$LOG_DIR/offline.log"
-   fi
 
-   # Cria o diretório de logs, se não existir
-   mkdir -p $LOG_DIR
+LOG_DIR=~/nginx-monitor-logs
+ONLINE_LOG=$LOG_DIR/online.log
+OFFLINE_LOG=$LOG_DIR/offline.log
 
-   # Salva as informações no arquivo de log
-   echo "$DATE - $SERVICE - Status: $STATUS - $MESSAGE" >> $FILE
+echo "$(date) - Script started" >> $LOG_DIR/cron.log
+
+if /bin/systemctl is-active nginx > /dev/null; then
+    echo "$(date) - Nginx is online" >> $ONLINE_LOG
+    echo "$(date) - Online log updated" >> $LOG_DIR/cron.log
+else
+    echo "$(date) - Nginx is offline" >> $OFFLINE_LOG
+    echo "$(date) - Offline log updated" >> $LOG_DIR/cron.log
+fi
+
+echo "$(date) - Script finished" >> $LOG_DIR/cron.log
    ```
 
    **Explicação:**
